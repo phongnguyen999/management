@@ -1,0 +1,37 @@
+<!-- app/templates/admin/roles/role.html -->
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_department %}
+        Add Role
+    {% else %}
+        Edit Role
+    {% endif %}
+{% endblock %}
+{% block body %}
+<header class="page-header">
+  <div class="container-fluid">
+    <h2 class="no-margin-bottom">Manage Factor</h2>
+  </div>
+</header>
+<section class="tables">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            {% if add_role %}
+                <h1>Add Factor</h1>
+            {% else %}
+                <h1>Edit Factor</h1>
+            {% endif %}
+            <br/>
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!-- app/templates/admin/employees/employee.html -->
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Assign Employee{% endblock %}
+{% block body %}
+<header class="page-header">
+  <div class="container-fluid">
+    <h2 class="no-margin-bottom">Assign Employee's factor</h2>
+  </div>
+</header>
+<section class="tables">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <p>
+                Select a payment factor to assign to
+                <span style="color: #aec251;">
+                    {{ employee.first_name }} {{ employee.last_name }}
+                </span>
+            </p>
+            <br/>
+            {{ wtf.quick_form(form) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
